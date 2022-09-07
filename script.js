@@ -4,39 +4,45 @@ function go(){
     let amountTime = (timer*60) + Number(document.querySelector("#seconds").value);
     
 
-    function calculateTime(){
+  function calculateTime(){
 
         
-        const countdown=document.querySelector("#countdown");
+    const countdown=document.querySelector("#countdown");
     
-        let minutes = Math.floor(amountTime/60);
-        let seconds = amountTime%60;
+    let minutes = Math.floor(amountTime/60);
+    let seconds = amountTime%60;
     
-        amountTime--;
+    amountTime--;
     
-        if (seconds<10) {
-            seconds = "0"+seconds;
-        }
+    if (seconds<10) {
+       seconds = "0"+seconds;
+    }
         
-        countdown.textContent = `${minutes} : ${seconds}`;
-        if (amountTime<0) {
-            stopTimer();
-            amountTime=0;
-            document.querySelector("#startBtn").textContent= "¡Listo!";
-        }
-        function stopTimer(){
-            clearInterval(timerId);
-        }
+    countdown.textContent = `${minutes} : ${seconds}`;
+    if (amountTime<0) {
+        stopTimer();
+        amountTime=0;
+        document.querySelector("#startBtn").textContent= "¡Listo!";
     }
-    let timerId = setInterval(calculateTime,1000);
+      
+  function stopTimer(){
+  
+      clearInterval(timerId);
+  }
+  
+    }
+  
+  let timerId = setInterval(calculateTime,1000);
     
     }
-    const button = document.querySelector("#startBtn");
-    button.addEventListener ("click", function(){
-        go();
-     
-       
-    })
+
+const button = document.querySelector("#startBtn");
+  button.addEventListener ("click", function(){
+   go();
+    document.querySelector("#startBtn").disabled = true;
+    document.querySelector("#minutes").value="";
+    document.querySelector("#seconds").value="";
+  })
     
 
 
