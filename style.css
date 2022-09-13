@@ -99,6 +99,18 @@ p {
 #startBtn:hover {
     background-color: #00A19D;
 }
+#btnReload{
+    font-family: 'Secular One', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 25px;
+    background-color: #7FBCD2;
+    align-items: center;
+    margin: 40px 0px 0px 0px;
+}
 .fb {
     margin: 10px;
 }

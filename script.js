@@ -36,6 +36,7 @@ function go(){
     
     }
 
+
 const button = document.querySelector("#startBtn");
   button.addEventListener ("click", function(){
    go();
@@ -44,7 +45,10 @@ const button = document.querySelector("#startBtn");
     document.querySelector("#seconds").value="";
   })
     
-
+const btnReload = document.querySelector('#btnReload')
+  btnReload.addEventListener('click', ()=>{
+    location.reload()
+})
 
 
 
@@ -141,6 +145,7 @@ const button = document.querySelector("#startBtn");
     gsap.from("h1", {y:-300, delay:0.2, duration:3, opacity:0.5, ease:"power4.out"})
     gsap.from("label", {x:-300, delay:0.4, duration:3, opacity:0, ease:"power4.out"})
     gsap.from("input", {x:300, delay:0.4, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from("#startBtn", {y:-20, delay:2, duration:3, opacity:0, ease:"power4.out"})
+    gsap.from("#startBtn", {x:-20, delay:2, duration:3, opacity:0, ease:"power4.out"})
+    gsap.from("#btnReload", {x:20, delay:2, duration:3, opacity:0, ease:"power4.out"})
     gsap.from("#countdown", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
     gsap.from(".block", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
