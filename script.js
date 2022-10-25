@@ -4,9 +4,8 @@ function go(){
     let amountTime = (timer*60) + Number(document.querySelector("#seconds").value);
     
 
-  function calculateTime(){
-
-        
+function calculateTime(){
+  
     const countdown=document.querySelector("#countdown");
     
     let minutes = Math.floor(amountTime/60);
@@ -50,12 +49,9 @@ const btnReload = document.querySelector('#btnReload')
     location.reload()
 })
 
-
-
-
-    clock();
+clock();
     
-    function clock() {
+  function clock() {
       const date = new Date();
     
       const hours = ((date.getHours() + 11) % 12 + 1);
@@ -72,8 +68,8 @@ const btnReload = document.querySelector('#btnReload')
     }
     
     setInterval(clock, 1000);
-    
-    
+
+
     particlesJS("particles-js", 
     {"particles":{
         "number":{
@@ -139,13 +135,52 @@ const btnReload = document.querySelector('#btnReload')
             }
         }
     },
-    "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"grab"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+    "interactivity":{
+      "detect_on":"canvas",
+      "events":{
+        "onhover":{
+          "enable":false,
+          "mode":"grab"
+        },
+        "onclick":{
+          "enable":false,
+          "mode":"push"
+        },
+        "resize":true
+      },
+      "modes":{
+        "grab":{
+          "distance":400,"line_linked":{
+            "opacity":1
+          }
+        },
+        "bubble":{
+          "distance":400,
+          "size":40,
+          "duration":2,
+          "opacity":8,
+          "speed":3
+        },
+        "repulse":{
+          "distance":200,"duration":0.4
+        },
+        "push":{
+          "particles_nb":4
+                 },
+        "remove":{
+          "particles_nb":2
+        }
+      }
+    },
+     "retina_detect":true
+    }
+  );
 
 
-    gsap.from("h1", {y:-300, delay:0.2, duration:3, opacity:0.5, ease:"power4.out"})
-    gsap.from("label", {x:-300, delay:0.4, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from("input", {x:300, delay:0.4, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from("#startBtn", {x:-20, delay:2, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from("#btnReload", {x:20, delay:2, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from("#countdown", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
-    gsap.from(".block", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"})
+    gsap.from("h1", {y:-300, delay:0.2, duration:3, opacity:0.5, ease:"power4.out"});
+    gsap.from("label", {x:-300, delay:0.4, duration:3, opacity:0, ease:"power4.out"});
+    gsap.from("input", {x:300, delay:0.4, duration:3, opacity:0, ease:"power4.out"});
+    gsap.from("#startBtn", {x:-20, delay:2, duration:3, opacity:0, ease:"power4.out"});
+    gsap.from("#btnReload", {x:20, delay:2, duration:3, opacity:0, ease:"power4.out"});
+    gsap.from("#countdown", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"});
+    gsap.from(".block", {y:100, delay:0.8, duration:3, opacity:0, ease:"power4.out"});
